@@ -43,8 +43,8 @@
 		  if(is_active($id)){
 			store_data($id, $data);
 		  }
-		  if(get_data($id)<>NULL)	{
-				
+		  $data = get_data($id);
+		  if($data<>NULL){
 			$name= $data[0];				
 			$surname= $data[1];				
 			$email= $data[2];		
