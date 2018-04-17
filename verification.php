@@ -1,7 +1,8 @@
 <?php 
 session_start(); 
-//$id = $_SESSION['id'];
+$id = $_SESSION['id'];
 $funkcija = null ; 
+include 'db.php' ; 
 ?>
 <html> 
 <form method="POST"> 
@@ -14,9 +15,9 @@ $funkcija = null ;
 $prompt = ''; 
 if ($_POST['Go']) { 
 	if 
-	 ($funkcija != null ) 
+	 (get_token($id) != null ) 
 	{ 
-	echo '<script>window.location.href = " "</script>'; // if succesful
+	echo "<script>alert('The verification was succesful');document.location.href = 'profile.php'</script>"; // if succesful
 } 
 else { 
 $prompt = 'Verification unsuccesful'; 
