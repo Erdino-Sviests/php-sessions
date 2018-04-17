@@ -39,22 +39,17 @@
 		  <?php
 		  session_start();
 		  $data = array();
-		  $id = $_SESSION["id"];
-		  if(is_active($id)){
-			store_data($id, $data);
-		  }
-		  $data = get_data($id);
+//		  $id = $_SESSION["id"];
+//		  if(is_active($id)){
+//			store_data($id, $data);
+//		  }
+		  //$data = array("Some","Person","my@email.com");
+          echo '<div class="self">';
 		  if($data<>NULL){
 			$name= $data[0];				
 			$surname= $data[1];				
 			$email= $data[2];		
-		}			
-		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$emailErr = "Invalid email format"; 
-		} else {	
-		
-		}	
-          echo '<div class="self">';
+		  
           echo ' <h1 class="name">'.$name.' '.$surname.'<br />';
           echo '  <span>Interactive Designer</span></h1>';
           echo ' <ul>';
@@ -65,6 +60,9 @@
 			echo '    <li class="mail">'.$email.'</li>';
 		}
 		echo '  </ul>';
+		  } else {
+			  echo '<span style="color:red">Missing user data!</span>';
+		  }
 		echo '</div>';
 		  ?>
           <!-- End Personal Information -->
