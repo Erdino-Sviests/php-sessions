@@ -36,7 +36,4 @@ echo $error;
         <input type="submit" name="submit" value="Login"/>
     </form>
 </body>
-</html> 
- Formatting took: 81 ms 
-PHP Formatter made by Spark Labs  
-Copyright Gerben van Veenendaal   
+</html>
