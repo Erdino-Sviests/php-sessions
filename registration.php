@@ -1,6 +1,6 @@
 <?php
 include 'db.php';
-if (isset($_Post['submit'])) {
+if (isset($_Post['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datus
     $succes = "";
     $error  = "";
     if ($_Post['id'] != "") { //Pārbauda vai lietotājvārds nav tukš.
