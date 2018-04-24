@@ -8,7 +8,7 @@ if (isset($_Post['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datu
             if ($_Post['password2'] != "") { //Pārbauda vai atkartotā parole nav tukša
                 if ($_Post['password1'] == $_Post['password2']) { //Salīdzina paroli ar atkārtoto paroli
                     register($_Post['id'], $_Post['password1']); //Izsauc funkciju, kas ieraksta datu bāzē lietotajvārdu un paroli
-                    $succes = "Registration has been succesful. You must varify your registration by activating link which we have sent to your email."; //Izvada virs formas, ka reģistrācija ir notikus. Izvada tajā pašā vietā, kur error(Vismaz orģinālaja kodā)
+                    $succes = "Registration has been successful. You must verify your registration by activating link which we have sent to your email."; //Izvada virs formas, ka reģistrācija ir notikus. Izvada tajā pašā vietā, kur error(Vismaz orģinālaja kodā)
                 } else {
                     $error = "Passwords  do not match!";
                 }
