@@ -5,10 +5,12 @@ $token = $_GET['token'];
 include 'db.php' ; 
 ?>
 <html> 
-<form method="POST"> 
-<input type="submit" name="Go" value="verify" /> 
-</form>
 
+<table align ="center">
+<tr><td>
+<input type="submit" name="Go" style="font-size:100pt;color:white;background-color:green;border:5px solid #000000;padding:5px" value="Verify" bgcolor ="" />
+</tr></td> 
+</table>
 
 
 <?php
