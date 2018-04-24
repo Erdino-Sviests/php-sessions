@@ -33,7 +33,7 @@ require_once 'excel_reader2.php';
 		}
 		#import .title{
 			text-align:center;
-			text-weight:bold;
+			font-weight:bold;
 			font-size:40px;
 			padding:10px;
 		}
@@ -49,10 +49,31 @@ require_once 'excel_reader2.php';
 			padding-right:10px;
 		}
 		#import_details{
-			width:100%;
+			margin-right:10px;
+			margin-left:10px;
 		}
 		#import_details .imported_users{
 			width:100%;
+		}
+		#success {
+			border: 2px solid rgba(0,255,0,0.9);
+			border-radius:25px;
+			text-align:center;
+			margin-top:10px;
+			margin-right:10px;
+			margin-left:10px;
+			padding:10px 0px 10px 0px;
+			font-weight:bold;
+		}
+		#error {
+			border: 2px solid rgba(255,0,0,0.9);
+			border-radius:25px;
+			text-align:center;
+			margin-top:10px;
+			margin-right:10px;
+			margin-left:10px;
+			padding:10px 0px 10px 0px;
+			font-weight:bold;
 		}
 	</style>
 	<head>
@@ -78,7 +99,7 @@ require_once 'excel_reader2.php';
 						$f = $_FILES["fails"];
 						$ext = pathinfo($f["name"], PATHINFO_EXTENSION);
 						if(!in_array($ext,$extenstions) ) {
-							echo "<script>alert('Selected file format not supported!');</script>";
+							echo "<div id='error'>Selected file format not supported!</div>";
 						}else{
 							$data = new Spreadsheet_Excel_Reader($f["name"],false);
 							$rcount = $data->rowcount($sheet=0);
@@ -116,7 +137,7 @@ require_once 'excel_reader2.php';
 									}
 								}
 								echo "<table class='imported_users' border='1' cellpadding='5px' cellspacing='0' >";
-									echo "<tr style='background-color:rgba(155,155,155,0.4)'><td>User</td><td>Status</td></tr>";
+									echo "<tr style='background-color:rgba(155,155,155,0.4); font-weight:bold'><td>User</td><td>Status</td></tr>";
 									foreach($new_users as $id=>$val)
 									{
 										if ($val["status"] == 0 and isset($_POST["show_ae"])){
@@ -130,13 +151,13 @@ require_once 'excel_reader2.php';
 									echo "<tr><td colspan='2'>Already existing users: $ae</td></tr>";
 									echo "<tr><td colspan='2'>New users: $new</td></tr>";
 								echo "</table>";
-								echo "<script>alert('Import successful!');</script>";
+								echo "<div id='success'>Import successful!</div>";
 							}else{
-								echo "<script>alert('Your selected file doesnt contain id or password column!');document.location.href = 'import.php'</script>";
+								echo "<div id='error'>Your selected file doesnt contain id or password column!</div>";
 							}
 						}
 					}else{
-						echo "<script>alert('Please select valid excel file!');</script>";
+						echo "<div id='error'>Please select valid excel file!</div>";
 					}
 				}
 				
@@ -145,4 +166,3 @@ require_once 'excel_reader2.php';
 		</div>
 	</body>
 </html>
-
