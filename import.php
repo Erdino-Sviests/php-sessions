@@ -12,6 +12,7 @@ require_once 'excel_reader2.php';
 			margin:0px;
 			padding:0px;
 			font-family:arial;
+			background-color:rgba(0,0,0,0.8);
 		}
 		#container{
 			top:50px;
@@ -19,12 +20,15 @@ require_once 'excel_reader2.php';
 			position:relative;
 			margin-left:auto;
 			margin-right:auto;
-			background-color:rgba(155,155,155,0.2);
-			
+			background-color:rgb(255,255,255);
+			border: 1px solid rgba(0,155,255,0.8);
+			padding: 10px;
+			box-shadow: 5px 8px rgba(0,155,255,0.7);
+			border-radius: 25px;
 		}
 		#import{
 			width:100%;
-			background-color:rgba(155,155,155,0.3);
+
 			overflow:auto;
 		}
 		#import .title{
