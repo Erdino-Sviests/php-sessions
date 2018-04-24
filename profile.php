@@ -29,47 +29,57 @@
   <div class="wrapper-mid">
     <!-- Begin Paper -->
     <div id="paper">
-      <div class="paper-top"></div>
-      <div id="paper-mid">
-        <div class="entry">
-          <!-- Begin Image -->
-          <img class="portrait" src="images/image.jpg" alt="John Smith" />
-          <!-- End Image -->
-          <!-- Begin Personal Information -->
+	<div class="paper-top"></div>
+	<div id="paper-mid">
+		<div class="entry">
+		  <!-- Begin Image -->
+		  <img class="portrait" src="images/image.jpg" alt="John Smith" />
+		  <!-- End Image -->
+		  <!-- Begin Personal Information -->
 		  <?php
 		  session_start();
 		  $data = array();
+		  $errorMsg = "";
 //		  $id = $_SESSION["id"];
 //		  if(is_active($id)){
 //			store_data($id, $data);
 //		  }
-		  //$data = array("Some","Person","my@email.com");
-          echo '<div class="self">';
+		  $data = array("John","Smith","john.smith@email.com");
+		  echo '<div class="self">';
 		  if($data<>NULL){
 			$name= $data[0];				
 			$surname= $data[1];				
 			$email= $data[2];		
-		  
-          echo ' <h1 class="name">'.$name.' '.$surname.'<br />';
-          echo '  <span>Interactive Designer</span></h1>';
-          echo ' <ul>';
+			
+		  echo '<h1 class="name">'.$name.'<br />';
+		  echo $surname.'<br /></h1>';
+		  echo '<ul>';
 		  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$emailErr = "Invalid email format"; 
-			echo '    <li class="web">'.$emailErr.'</li>';
+			$errorMsg = "Missing E-mail!"; 
 		} else {	
-			echo '    <li class="mail">'.$email.'</li>';
+			echo '<li class="mail">'.$email.'</li>';
 		}
-		echo '  </ul>';
+		echo '</ul>';
 		  } else {
-			  echo '<span style="color:red">Missing user data!</span>';
+			  $errorMsg = 'Missing Users Data!';
 		  }
 		echo '</div>';
-		  ?>
-          <!-- End Personal Information -->
-        </div>
-       </div>
+		 ?>
+		  <!-- End Personal Information -->
+		</div>
+		  <!-- Begin Error Block -->
+			<div>
+			<?php
+			if($errorMsg<>""){
+				echo '<span style="font-size:16px; color:red">'.$errorMsg.'</span>';
+			}
+			?>
+			</div>
+		  <!-- End Error Block -->
+	</div>
       <div class="clear"></div>
-      <div class="paper-bottom"></div>
+      <div class="paper-bottom">
+	  </div>
     </div>
     <!-- End Paper -->
   </div>
