@@ -1,6 +1,9 @@
 <?php
 
 function read_db() {
+	if (!file_exists("db.json")) {
+		return [];
+	}
 	$f = file_get_contents("db.json") or die("unable to open database");
 	return json_decode($f, true);
 }
