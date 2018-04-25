@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datu
 	?></p>
         <p>Username:<input type="text" name="id" required="required" style=" background-color:#69E1AD"/></p>
         <p>Password:<input type="password" name="password1" required="required" style=" background-color:#69E1AD" /></p>
-        <p>Password:<input type="password" name="password2" required="required" style=" background-color:#69E1AD"/></p>
+        <p>Repassword:<input type="password" name="password2" required="required" style=" background-color:#69E1AD"/></p>
         <input type="submit" name="submit" value="Register"/>
     </form>
 </body>
