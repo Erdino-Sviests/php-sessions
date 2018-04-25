@@ -40,11 +40,11 @@
 		  session_start();
 		  $data = array();
 		  $errorMsg = "";
-//		  $id = $_SESSION["id"];
-//		  if(is_active($id)){
-//			store_data($id, $data);
-//		  }
-		  $data = array("John","Smith","john.smith@email.com");
+		  $id = $_SESSION["id"];
+		  if(is_active($id)){
+			$data = get_data($id);
+		  }
+//		  $data = array("John","Smith","john.smith@email.com");
 		  echo '<div class="self">';
 		  if($data<>NULL){
 			$name= $data[0];				
@@ -55,7 +55,7 @@
 		  echo $surname.'<br /></h1>';
 		  echo '<ul>';
 		  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$errorMsg = "Missing E-mail!"; 
+			$errorMsg = "Wrong e-mail format!"; 
 		} else {	
 			echo '<li class="mail">'.$email.'</li>';
 		}
