@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datu
     }
 } //Tālāk seko html formas paraugs (nev tas, ko izmantosim)
 ?>
-<html lang="en">  
+<html lang="en">
 <body style="
     display: flex;
 	background-color:#E7EAF4;
@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datu
         <p>Username:<input type="text" name="id" required="required" style=" background-color:#69E1AD"/></p>
         <p>Password:<input type="password" name="password1" required="required" style=" background-color:#69E1AD" /></p>
         <p>Password:<input type="password" name="password2" required="required" style=" background-color:#69E1AD"/></p>
-        <input type="submit" name="submit" value="Login"/>
+        <input type="submit" name="submit" value="Register"/>
     </form>
 </body>
 </html>
