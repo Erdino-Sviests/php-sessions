@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datu
         $error = "User name is empty";
     }
 } //Tālāk seko html formas paraugs (nev tas, ko izmantosim)
-?>
+/*
 <html lang="en">  
 <body style="
     display: flex;
@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datu
     <form id="regform" method="post" action="" style="
     margin: auto;
     padding: 1em;
-    text-align: center;
+	text-align: center;
     background-color: lightgrey;
     box-shadow:0px 0px 0px 8px black inset;
     "
@@ -49,4 +49,73 @@ if (isset($_POST['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datu
         <input type="submit" name="submit" value="Register"/>
     </form>
 </body>
+</html> */
+?>
+<html>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+<body>
+
+<h3>Register</h3>
+
+<div>
+  <form>
+    <label for="Username">Username</label>
+    <input type="text" id="Username" name="id">
+
+    <label for="Password">Password</label>
+    <input type="Password" id="Password" name="password1">
+    
+    <label for="REPassword">Retype Password</label>
+    <input type="Password" id="REPassword" name="password2">
+  
+    <input type="submit" value="Confirm">
+  </form>
+</div>
+
+</body>
 </html>
+
+<?php
+echo $succes;
+echo $error;
+?>
