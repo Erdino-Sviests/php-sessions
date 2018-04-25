@@ -1,8 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 session_start();
-$id = $_GET['id'];
-$token = $_GET['token'];
 include 'db.php';
 ?>
 <html>
@@ -36,6 +34,12 @@ body {
 <tr><td>
 <div>
 <form method="POST">
+<?php
+echo "
+		<input type=text name=id value={$_GET['id']} hidden>
+		<input type=text name=token value={$_GET['token']} hidden>
+	";
+?>
 <input type="submit" class="button" name="Go"  value="Verify"  />
 </div>
 </tr></td>
@@ -45,7 +49,9 @@ body {
 <?php
 $prompt = '';
 if ($_POST['Go']) {
-    if (isset($_GET['id']) && isset($_GET['token'])) {
+    $id = $_POST['id'];
+    $token = $_POST['token'];
+    if (isset($_POST['id']) && isset($_POST['token'])) {
         if
         (activate_account($id, $token) == true) {
             echo "<script>alert('The verification was succesful');document.location.href = '/profile.php'</script>"; // if succesful

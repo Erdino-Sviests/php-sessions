@@ -43,7 +43,7 @@ function get_token($id) {
 
 function activate_account($id, $token) {
 	$db = read_db();
-	if (!array_key_exists($id, $db) || $db[$id]["token"] != $token) {
+	if (!array_key_exists($id, $db) || $db[$id]["verification_token"] != $token) {
 		return false;
 	}
 	$db[$id]["active"] = true;
