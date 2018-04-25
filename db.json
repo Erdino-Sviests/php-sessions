@@ -1,0 +1,8 @@
+{
+    "test": {
+        "password": "123",
+        "active": false,
+        "verification_token": "1fe85bcbe94e949b8ab3dbab51588764",
+        "data": []
+    }
+}
