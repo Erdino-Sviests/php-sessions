@@ -32,8 +32,7 @@ if (isset($_POST['submit'])) { //Pārbauda vai nospiest poga, lai ievadītu datu
 ">
     <form id="regform" method="post" action="" style="
     margin: auto;
-    height:250px;
-    width:275px;
+    padding: 1em;
     text-align: center;
     background-color: lightgrey;
     box-shadow:0px 0px 0px 8px black inset;
